@@ -2,7 +2,7 @@ name: Deploy Website to cPanel
 on:
   push:
     branches:
-      - deploy  # Hoặc 'master' tùy nhánh bạn đang dùng
+      - v2  # Kích hoạt khi bạn push lên v2
 
 jobs:
   FTP-Deploy-Action:
@@ -18,6 +18,6 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./build/
-        server-dir: ./
-        # 'server-dir: ./' vì tài khoản FTP ở Bước 1 đã trỏ thẳng vào public_html rồi
+        # ĐÂY LÀ ĐIỂM QUAN TRỌNG NHẤT:
+        local-dir: ./dist/   # Nó sẽ vào folder dist trên nhánh v2 để lấy file
+        server-dir: ./       # Đổ vào thư mục gốc của hosting (public_html)
