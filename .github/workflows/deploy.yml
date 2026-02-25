@@ -1,0 +1,23 @@
+name: Deploy Website to cPanel
+on:
+  push:
+    branches:
+      - delpoy  # Hoặc 'master' tùy nhánh bạn đang dùng
+
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./build/
+        server-dir: ./
+        # 'server-dir: ./' vì tài khoản FTP ở Bước 1 đã trỏ thẳng vào public_html rồi

@@ -8,7 +8,9 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        'background-custom': '#f0f0f6', // Thay đổi mã màu tùy chỉnh ở đây
+        // 'background-custom': '#f0f0f6', // Thay đổi mã màu tùy chỉnh ở đây
+        'background-custom': '#8037f1', // Thay đổi mã màu tùy chỉnh ở đây
+        'bg-yellow-500':'#8037f1'
       },
     },
   },
