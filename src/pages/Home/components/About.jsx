@@ -74,7 +74,7 @@ const About = () => {
                 </>
               ) : (
                 <>
-                  More info <FaChevronDown className="animate-bounce" />
+                  More infom <FaChevronDown className="animate-bounce" />
                 </>
               )}
             </button>
