@@ -2,7 +2,7 @@ name: Deploy Website to cPanel
 on:
   push:
     branches:
-      - delpoy  # Hoặc 'master' tùy nhánh bạn đang dùng
+      - deploy  # Hoặc 'master' tùy nhánh bạn đang dùng
 
 jobs:
   FTP-Deploy-Action:
