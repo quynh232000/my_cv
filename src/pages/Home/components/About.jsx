@@ -6,7 +6,6 @@ const About = () => {
   const { data } = useSelector((state) => state.user);
   const [isExpanded, setIsExpanded] = useState(false);
   const info = data?.data_info;
-  console.log(data);
 
   if (!info) return null;
 
