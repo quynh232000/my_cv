@@ -3,8 +3,16 @@ import { Offcanvas } from "../components/commons";
 import MenuLeft from "../components/menuLeft";
 import MenuRight from "../components/menuRight";
 import { HomePage } from "../pages";
+import { useDispatch } from "react-redux";
+import { fetchUsers } from "../store/userSlice";
 
 const LayoutHome = () => {
+  const dispatch = useDispatch()
+  
+
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [dispatch])
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

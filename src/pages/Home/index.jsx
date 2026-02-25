@@ -1,36 +1,55 @@
 import Footer from "../../components/footer";
-import { About, Education, Testimonial, Work } from "./components";
+import {
+  About,
+  Education,
+  // Quotes,
+  Work,   // Projects
+} from "./components";
 import { Element } from "react-scroll";
+import Contact from "./components/Contact";
+import Awards from "./components/Awards";
+import WorkExperience from "./components/WorkExperience";
+import Reviews from "./components/Reviews";
+
 const HomePage = () => {
   return (
-    <div>
-      {/* my infomation home  */}
-      <Element
-        name="home"
-        id="home"
-        className="bg-white   shadow-lg dark:bg-[#1e2329] rounded-b-lg px-10 pt-10 relative"
-      >
+    <div className="flex flex-col gap-12 py-5 lg:gap-20 px-6">
+      {/* 1. GIỚI THIỆU CHUNG */}
+      <Element name="home" id="home">
         <About />
       </Element>
-      {/* quotes */}
-      {/* <Quotes /> */}
-      {/* Work  */}
-      <Element name="work" className="pb-0 pt-10">
+
+      {/* 3. KINH NGHIỆM LÀM VIỆC (Mới) */}
+      <Element name="experience" id="experience">
+        <WorkExperience />
+      </Element>
+
+      {/* 4. DỰ ÁN TIÊU BIỂU */}
+      <Element name="work" id="project">
         <Work />
       </Element>
-      {/* education */}
-      <Element name="testimonials">
-        <Testimonial />
-      </Element>
-      <Element className="py-10 " name="education">
+
+      {/* 5. HỌC VẤN */}
+      <Element id="education" name="education">
         <Education />
       </Element>
-      {/* Testimonial */}
-      
-      {/* <Element name="reviews">
-        <Review />
-      </Element> */}
-      <Footer/>
+
+      {/* 6. GIẢI THƯỞNG (Mới) */}
+      <Element name="awards" id="awards">
+        <Awards />
+      </Element>
+
+      {/* 7. ĐÁNH GIÁ TỪ ĐỒNG NGHIỆP/KHÁCH HÀNG */}
+      <Element name="reviews" id="reviews">
+        <Reviews />
+      </Element>
+
+      {/* 8. LIÊN HỆ (Mới) */}
+      <Element name="contact" id="contact">
+        <Contact />
+      </Element>
+
+      <Footer />
     </div>
   );
 };
