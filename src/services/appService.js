@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_API_URL, EMAIL_SERVICE } from "../config/constant";
+import { BASE_API_URL, CACHE_DATA, EMAIL_SERVICE } from "../config/constant";
 
 const api = axios.create({
   baseURL: BASE_API_URL,
@@ -23,12 +23,16 @@ export const withCache = async (key, apiCall, ttl = DEFAULT_TTL) => {
   // 1. Kiểm tra cache
   const cached = localStorage.getItem(key);
   if (cached) {
-    const item = JSON.parse(cached);
-    if (now < item.expiry) {
-      // console.log(`%c Cache hit: ${key}`, "color: #00ff00");
-      return item.value;
+    if(CACHE_DATA){
+      const item = JSON.parse(cached);
+      if (now < item.expiry) {
+        // console.log(`%c Cache hit: ${key}`, "color: #00ff00");
+        return item.value;
+      }
+      localStorage.removeItem(key);
+    }else{
+      localStorage.removeItem(key);
     }
-    localStorage.removeItem(key);
   }
 
   // 2. Gọi API nếu không có cache hoặc hết hạn
@@ -40,7 +44,9 @@ export const withCache = async (key, apiCall, ttl = DEFAULT_TTL) => {
     value: data,
     expiry: now + ttl,
   };
-  localStorage.setItem(key, JSON.stringify(dataToCache));
+  if(CACHE_DATA){
+    localStorage.setItem(key, JSON.stringify(dataToCache));
+  }
 
   return data;
 };
@@ -70,6 +76,15 @@ export const getBlogs = async () => {
 export const getBlogDetail = async (slug) => {
   const res = await api.post("/blog-detail/" + slug, {
     email: EMAIL_SERVICE,
+  });
+  return res.data;
+};
+
+
+export const sendTracking = async (formData) => {
+  const res = await api.post("/contact", {
+    ...formData,
+    email_contact: EMAIL_SERVICE, // Gửi kèm email để xác định người nhận
   });
   return res.data;
 };

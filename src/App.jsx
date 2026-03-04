@@ -9,6 +9,7 @@ import LayoutWork from "./layouts/LayoutWork";
 import AppLayout from "./layouts/AppLayout";
 import BlogPage from "./pages/blog/BlogPage";
 import BlogDetailPage from "./pages/blog/BlogDetailPage";
+import { TrafficTracker } from "./hook/TrafficTracker";
 
 function App() {
   const location = useLocation();
@@ -77,9 +78,10 @@ function App() {
   ];
 
   const content = useRoutes(routes);
-
+  //  check tracking
   return (
     <>
+    <TrafficTracker />
       {content}
       <Background />
     </>

@@ -71,7 +71,7 @@ const Footer = () => {
           {/* Logo / Name */}
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="mb-10 text-center">
             <h2 className="text-4xl font-black dark:text-white tracking-tighter uppercase">
-              {info.full_name || "Mr Quynh"}<span className="text-yellow-500">.</span>
+              {info.name || "Mr Quynh"}<span className="text-yellow-500">.</span>
             </h2>
             <div className="w-12 h-1 bg-yellow-500 mx-auto mt-2 rounded-full"></div>
           </motion.div>
@@ -117,7 +117,7 @@ const Footer = () => {
             <p className="text-xs font-medium text-gray-500 dark:text-gray-400 tracking-wide order-2 md:order-1 text-center md:text-left">
               © {new Date().getFullYear()} • Created with ❤️ by 
               <span className="text-gray-900 dark:text-white font-bold ml-1 hover:text-yellow-500 transition-colors">
-                 {info.full_name || "Nguyen Van Quynh"}
+                 {info.name || "Nguyen Van Quynh"}
               </span>
             </p>
 
