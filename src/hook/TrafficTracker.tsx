@@ -30,7 +30,7 @@ export function TrafficTracker() {
       
       sendTracking({
         tracking: {
-          pathname: currentPath,
+          pathname: window.location.href,
         },
         type: "tracking"
       });
