@@ -2,7 +2,7 @@ name: Deploy Website to cPanel
 on:
   push:
     branches:
-      - v2  # Kích hoạt khi bạn push lên v2
+      - nhung  # Kích hoạt khi bạn push lên v2
 
 jobs:
   FTP-Deploy-Action:
@@ -20,4 +20,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         # ĐÂY LÀ ĐIỂM QUAN TRỌNG NHẤT:
         local-dir: ./dist/   # Nó sẽ vào folder dist trên nhánh v2 để lấy file
-        server-dir: ./       # Đổ vào thư mục gốc của hosting (public_html)
+        server-dir: ./hongnhung.site/      # Đổ vào thư mục gốc của hosting (public_html)
