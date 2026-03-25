@@ -20,4 +20,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         # ĐÂY LÀ ĐIỂM QUAN TRỌNG NHẤT:
         local-dir: ./dist/   # Nó sẽ vào folder dist trên nhánh v2 để lấy file
-        server-dir: ./hongnhung.site/      # Đổ vào thư mục gốc của hosting (public_html)
+        server-dir: /home/mrquynhc/hongnhung.site/      # Đổ vào thư mục gốc của hosting (public_html)
