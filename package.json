@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && copyfiles .htaccess dist/",
-    "deploy-git": "npm run build && git add . && git commit -m 'Build' && git push origin v2",
+    "deploy-git": "npm run build && git add . && git commit -m 'Build' && git push origin nhung",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
