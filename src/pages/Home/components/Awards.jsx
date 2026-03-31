@@ -36,7 +36,7 @@ function Awards() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black dark:text-white uppercase tracking-tighter">
-            My <span className="text-yellow-500 text-outline-yellow">Awards</span>
+            My <span className="text-yellow-500 text-outline-yellow">Activities</span>
           </h2>
         </div>
 
